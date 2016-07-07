@@ -253,7 +253,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Restaurante_Cardapio", Storage="_Restaurante", ThisKey="Restaurante_id", OtherKey="Id", IsForeignKey=true)]
-		public Restaurante Restaurante
+		internal Restaurante Restaurante
 		{
 			get
 			{
@@ -432,7 +432,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Restaurante_Fila", Storage="_Restaurante", ThisKey="Restaurante_id", OtherKey="Id", IsForeignKey=true)]
-		public Restaurante Restaurante
+		internal Restaurante Restaurante
 		{
 			get
 			{
@@ -674,7 +674,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pedido_ItemPedido", Storage="_Pedido", ThisKey="Pedido_Id", OtherKey="Id", IsForeignKey=true)]
-		public Pedido Pedido
+		internal Pedido Pedido
 		{
 			get
 			{
@@ -708,7 +708,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_ItemPedido", Storage="_Produto", ThisKey="Produto_Id", OtherKey="Id", IsForeignKey=true)]
-		public Produto Produto
+		internal Produto Produto
 		{
 			get
 			{
@@ -899,7 +899,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Restaurante_Mesa", Storage="_Restaurante", ThisKey="Restaurante_Id", OtherKey="Id", IsForeignKey=true)]
-		public Restaurante Restaurante
+		internal Restaurante Restaurante
 		{
 			get
 			{
@@ -1126,7 +1126,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mesa_Pedido", Storage="_Mesa", ThisKey="Mesa_Id", OtherKey="Id", IsForeignKey=true)]
-		public Mesa Mesa
+		internal Mesa Mesa
 		{
 			get
 			{
@@ -1408,7 +1408,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cardapio_Produto", Storage="_Cardapio", ThisKey="Cardapio_id", OtherKey="Id", IsForeignKey=true)]
-		public Cardapio Cardapio
+		internal Cardapio Cardapio
 		{
 			get
 			{
@@ -1442,7 +1442,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fila_Produto", Storage="_Fila", ThisKey="Fila_id", OtherKey="Id", IsForeignKey=true)]
-		public Fila Fila
+		internal Fila Fila
 		{
 			get
 			{
