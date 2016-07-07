@@ -1,0 +1,128 @@
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\ApplicationInsights.config
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\csc.exe
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\vbc.exe
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\VBCSCompiler.exe
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\CRUDRestaurante.dll.config
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\CRUDRestaurante.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\CRUDRestaurante.pdb
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Antlr3.Runtime.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.Web.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.ApplicationInsights.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Newtonsoft.Json.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Net.Http.Extensions.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Net.Http.Formatting.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Net.Http.Primitives.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Helpers.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Http.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Http.WebHost.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Mvc.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Optimization.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Razor.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.WebPages.Deployment.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.WebPages.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.WebPages.Razor.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\WebGrease.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.Web.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.ApplicationInsights.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Newtonsoft.Json.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Net.Http.Extensions.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Net.Http.Primitives.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Net.Http.Formatting.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Helpers.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Http.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Http.WebHost.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Mvc.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Optimization.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.Razor.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.WebPages.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.WebPages.Deployment.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\System.Web.WebPages.Razor.xml
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\bin\Antlr3.Runtime.pdb
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\obj\Debug\CRUDRestaurante.csproj.App.config
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\obj\Debug\CRUDRestaurante.csprojResolveAssemblyReference.cache
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\obj\Debug\CRUDRestaurante.dll
+C:\Users\gilson\Documents\Visual Studio 2015\Projects\Servico\CRUD-Restaurante\CRUDRestaurante\obj\Debug\CRUDRestaurante.pdb
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\ApplicationInsights.config
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\csc.exe
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\vbc.exe
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\VBCSCompiler.exe
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\CRUDRestaurante.dll.config
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\CRUDRestaurante.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\CRUDRestaurante.pdb
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Antlr3.Runtime.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.Web.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.ApplicationInsights.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Newtonsoft.Json.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Net.Http.Extensions.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Net.Http.Formatting.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Net.Http.Primitives.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Helpers.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Http.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Http.WebHost.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Mvc.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Optimization.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Razor.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.WebPages.Deployment.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.WebPages.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.WebPages.Razor.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\WebGrease.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.Web.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.ApplicationInsights.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Newtonsoft.Json.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Net.Http.Extensions.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Net.Http.Primitives.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Net.Http.Formatting.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Helpers.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Http.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Http.WebHost.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Mvc.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Optimization.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.Razor.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.WebPages.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.WebPages.Deployment.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\System.Web.WebPages.Razor.xml
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\bin\Antlr3.Runtime.pdb
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\obj\Debug\CRUDRestaurante.csproj.App.config
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\obj\Debug\CRUDRestaurante.csprojResolveAssemblyReference.cache
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\obj\Debug\CRUDRestaurante.dll
+C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\obj\Debug\CRUDRestaurante.pdb
