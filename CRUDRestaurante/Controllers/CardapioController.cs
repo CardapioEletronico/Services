@@ -17,14 +17,6 @@ namespace CRUDRestaurante.Controllers
             return cardapios.ToList();
         }
 
-        public IEnumerable<Models.Cardapio> GetIdRestaurante(int idRestaurante, [FromBody] string value)
-        {
-            //List<Models.Cardapio> c = JsonConvert.DeserializeObject<List<Models.Cardapio>>(value);
-            Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var cardapios = from f in dc.Cardapios where f.Restaurante_id == idRestaurante select f;
-            return cardapios.ToList();
-        }
-
         // POST api/values
         public void Post([FromBody]string value)
         {
