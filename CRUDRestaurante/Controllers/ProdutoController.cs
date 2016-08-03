@@ -8,32 +8,36 @@ using System.Web.Http;
 
 namespace CRUDRestaurante.Controllers
 {
-    public class CardapioController : ApiController
+    public class ProdutoController : ApiController
     {
-        public IEnumerable<Models.Cardapio> Get()
+        public IEnumerable<Models.Produto> Get()
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var listaCardapios = from f in dc.Cardapios select f;
-            return listaCardapios.ToList();
+            var listaProdutos = from f in dc.Produtos select f;
+            return listaProdutos.ToList();
         }
 
         // POST api/values
         public void Post([FromBody]string value)
         {
-            List<Models.Cardapio> f = JsonConvert.DeserializeObject<List<Models.Cardapio>>(value);
+            List<Models.Produto> f = JsonConvert.DeserializeObject<List<Models.Produto>>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Cardapios.InsertAllOnSubmit(f);
+            dc.Produtos.InsertAllOnSubmit(f);
             dc.SubmitChanges();
         }
 
         // PUT api/values/5
         public void Put(int id, [FromBody]string value)
         {
-            Models.Cardapio c = JsonConvert.DeserializeObject<Models.Cardapio>(value);
+            Models.Produto c = JsonConvert.DeserializeObject<Models.Produto>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var cardapio = (from f in dc.Filas where f.Id == id select f).Single();
-            cardapio.Descricao = c.Descricao;
-            cardapio.Restaurante_id = c.Restaurante_id;
+            var produto = (from f in dc.Produtos where f.Id == id select f).Single();
+            produto.Descricao = c.Descricao;
+            produto.Preco = c.Preco;
+            produto.Foto = c.Foto;
+            produto.NomeDescricao = c.Descricao;
+            produto.Cardapio_id = c.Cardapio_id;
+            produto.Fila_id = c.Fila_id;
             dc.SubmitChanges();
         }
 
@@ -41,8 +45,8 @@ namespace CRUDRestaurante.Controllers
         public void Delete(int id)
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var cardapio = (from f in dc.Cardapios where f.Id == id select f).Single();
-            dc.Cardapios.DeleteOnSubmit(cardapio);
+            var produto = (from f in dc.Produtos where f.Id == id select f).Single();
+            dc.Produtos.DeleteOnSubmit(produto);
             dc.SubmitChanges();
         }
     }

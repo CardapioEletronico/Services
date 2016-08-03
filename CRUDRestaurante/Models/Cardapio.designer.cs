@@ -33,6 +33,9 @@ namespace CRUDRestaurante.Models
     partial void InsertCardapio(Cardapio instance);
     partial void UpdateCardapio(Cardapio instance);
     partial void DeleteCardapio(Cardapio instance);
+    partial void InsertCategoria(Categoria instance);
+    partial void UpdateCategoria(Categoria instance);
+    partial void DeleteCategoria(Categoria instance);
     partial void InsertFila(Fila instance);
     partial void UpdateFila(Fila instance);
     partial void DeleteFila(Fila instance);
@@ -88,6 +91,14 @@ namespace CRUDRestaurante.Models
 			get
 			{
 				return this.GetTable<Cardapio>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Categoria> Categorias
+		{
+			get
+			{
+				return this.GetTable<Categoria>();
 			}
 		}
 		
@@ -152,6 +163,8 @@ namespace CRUDRestaurante.Models
 		
 		private System.Nullable<int> _Restaurante_id;
 		
+		private EntitySet<Categoria> _Categorias;
+		
 		private EntitySet<Produto> _Produtos;
 		
 		private EntityRef<Restaurante> _Restaurante;
@@ -170,6 +183,7 @@ namespace CRUDRestaurante.Models
 		
 		public Cardapio()
 		{
+			this._Categorias = new EntitySet<Categoria>(new Action<Categoria>(this.attach_Categorias), new Action<Categoria>(this.detach_Categorias));
 			this._Produtos = new EntitySet<Produto>(new Action<Produto>(this.attach_Produtos), new Action<Produto>(this.detach_Produtos));
 			this._Restaurante = default(EntityRef<Restaurante>);
 			OnCreated();
@@ -239,8 +253,21 @@ namespace CRUDRestaurante.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cardapio_Categoria", Storage="_Categorias", ThisKey="Id", OtherKey="Cardapio_id")]
+		internal EntitySet<Categoria> Categorias
+		{
+			get
+			{
+				return this._Categorias;
+			}
+			set
+			{
+				this._Categorias.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cardapio_Produto", Storage="_Produtos", ThisKey="Id", OtherKey="Cardapio_id")]
-		public EntitySet<Produto> Produtos
+		internal EntitySet<Produto> Produtos
 		{
 			get
 			{
@@ -306,6 +333,18 @@ namespace CRUDRestaurante.Models
 			}
 		}
 		
+		private void attach_Categorias(Categoria entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cardapio = this;
+		}
+		
+		private void detach_Categorias(Categoria entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cardapio = null;
+		}
+		
 		private void attach_Produtos(Produto entity)
 		{
 			this.SendPropertyChanging();
@@ -316,6 +355,185 @@ namespace CRUDRestaurante.Models
 		{
 			this.SendPropertyChanging();
 			entity.Cardapio = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Categoria")]
+	public partial class Categoria : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Descricao;
+		
+		private System.Nullable<int> _Cardapio_id;
+		
+		private EntitySet<Produto> _Produtos;
+		
+		private EntityRef<Cardapio> _Cardapio;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnDescricaoChanging(string value);
+    partial void OnDescricaoChanged();
+    partial void OnCardapio_idChanging(System.Nullable<int> value);
+    partial void OnCardapio_idChanged();
+    #endregion
+		
+		public Categoria()
+		{
+			this._Produtos = new EntitySet<Produto>(new Action<Produto>(this.attach_Produtos), new Action<Produto>(this.detach_Produtos));
+			this._Cardapio = default(EntityRef<Cardapio>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(50)")]
+		public string Descricao
+		{
+			get
+			{
+				return this._Descricao;
+			}
+			set
+			{
+				if ((this._Descricao != value))
+				{
+					this.OnDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._Descricao = value;
+					this.SendPropertyChanged("Descricao");
+					this.OnDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cardapio_id", DbType="Int")]
+		public System.Nullable<int> Cardapio_id
+		{
+			get
+			{
+				return this._Cardapio_id;
+			}
+			set
+			{
+				if ((this._Cardapio_id != value))
+				{
+					if (this._Cardapio.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCardapio_idChanging(value);
+					this.SendPropertyChanging();
+					this._Cardapio_id = value;
+					this.SendPropertyChanged("Cardapio_id");
+					this.OnCardapio_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categoria_Produto", Storage="_Produtos", ThisKey="Id", OtherKey="Cardapio_id")]
+		internal EntitySet<Produto> Produtos
+		{
+			get
+			{
+				return this._Produtos;
+			}
+			set
+			{
+				this._Produtos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cardapio_Categoria", Storage="_Cardapio", ThisKey="Cardapio_id", OtherKey="Id", IsForeignKey=true)]
+		internal Cardapio Cardapio
+		{
+			get
+			{
+				return this._Cardapio.Entity;
+			}
+			set
+			{
+				Cardapio previousValue = this._Cardapio.Entity;
+				if (((previousValue != value) 
+							|| (this._Cardapio.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Cardapio.Entity = null;
+						previousValue.Categorias.Remove(this);
+					}
+					this._Cardapio.Entity = value;
+					if ((value != null))
+					{
+						value.Categorias.Add(this);
+						this._Cardapio_id = value.Id;
+					}
+					else
+					{
+						this._Cardapio_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Cardapio");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Produtos(Produto entity)
+		{
+			this.SendPropertyChanging();
+			entity.Categoria = this;
+		}
+		
+		private void detach_Produtos(Produto entity)
+		{
+			this.SendPropertyChanging();
+			entity.Categoria = null;
 		}
 	}
 	
@@ -419,7 +637,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fila_Produto", Storage="_Produtos", ThisKey="Id", OtherKey="Fila_id")]
-		public EntitySet<Produto> Produtos
+		internal EntitySet<Produto> Produtos
 		{
 			get
 			{
@@ -886,7 +1104,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mesa_Pedido", Storage="_Pedidos", ThisKey="Id", OtherKey="Mesa_Id")]
-		public EntitySet<Pedido> Pedidos
+		internal EntitySet<Pedido> Pedidos
 		{
 			get
 			{
@@ -1113,7 +1331,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pedido_ItemPedido", Storage="_ItemPedidos", ThisKey="Id", OtherKey="Pedido_Id")]
-		public EntitySet<ItemPedido> ItemPedidos
+		internal EntitySet<ItemPedido> ItemPedidos
 		{
 			get
 			{
@@ -1216,6 +1434,8 @@ namespace CRUDRestaurante.Models
 		
 		private EntityRef<Cardapio> _Cardapio;
 		
+		private EntityRef<Categoria> _Categoria;
+		
 		private EntityRef<Fila> _Fila;
 		
     #region Extensibility Method Definitions
@@ -1242,6 +1462,7 @@ namespace CRUDRestaurante.Models
 		{
 			this._ItemPedidos = new EntitySet<ItemPedido>(new Action<ItemPedido>(this.attach_ItemPedidos), new Action<ItemPedido>(this.detach_ItemPedidos));
 			this._Cardapio = default(EntityRef<Cardapio>);
+			this._Categoria = default(EntityRef<Categoria>);
 			this._Fila = default(EntityRef<Fila>);
 			OnCreated();
 		}
@@ -1357,7 +1578,7 @@ namespace CRUDRestaurante.Models
 			{
 				if ((this._Cardapio_id != value))
 				{
-					if (this._Cardapio.HasLoadedOrAssignedValue)
+					if ((this._Cardapio.HasLoadedOrAssignedValue || this._Categoria.HasLoadedOrAssignedValue))
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1395,7 +1616,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_ItemPedido", Storage="_ItemPedidos", ThisKey="Id", OtherKey="Produto_Id")]
-		public EntitySet<ItemPedido> ItemPedidos
+		internal EntitySet<ItemPedido> ItemPedidos
 		{
 			get
 			{
@@ -1437,6 +1658,40 @@ namespace CRUDRestaurante.Models
 						this._Cardapio_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Cardapio");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Categoria_Produto", Storage="_Categoria", ThisKey="Cardapio_id", OtherKey="Id", IsForeignKey=true)]
+		internal Categoria Categoria
+		{
+			get
+			{
+				return this._Categoria.Entity;
+			}
+			set
+			{
+				Categoria previousValue = this._Categoria.Entity;
+				if (((previousValue != value) 
+							|| (this._Categoria.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Categoria.Entity = null;
+						previousValue.Produtos.Remove(this);
+					}
+					this._Categoria.Entity = value;
+					if ((value != null))
+					{
+						value.Produtos.Add(this);
+						this._Cardapio_id = value.Id;
+					}
+					else
+					{
+						this._Cardapio_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Categoria");
 				}
 			}
 		}
@@ -1583,7 +1838,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Restaurante_Cardapio", Storage="_Cardapios", ThisKey="Id", OtherKey="Restaurante_id")]
-		public EntitySet<Cardapio> Cardapios
+		internal EntitySet<Cardapio> Cardapios
 		{
 			get
 			{
@@ -1596,7 +1851,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Restaurante_Fila", Storage="_Filas", ThisKey="Id", OtherKey="Restaurante_id")]
-		public EntitySet<Fila> Filas
+		internal EntitySet<Fila> Filas
 		{
 			get
 			{
@@ -1609,7 +1864,7 @@ namespace CRUDRestaurante.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Restaurante_Mesa", Storage="_Mesas", ThisKey="Id", OtherKey="Restaurante_Id")]
-		public EntitySet<Mesa> Mesas
+		internal EntitySet<Mesa> Mesas
 		{
 			get
 			{
