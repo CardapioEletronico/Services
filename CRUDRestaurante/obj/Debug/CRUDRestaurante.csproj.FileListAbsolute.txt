@@ -126,3 +126,7 @@ C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\obj\De
 C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\obj\Debug\CRUDRestaurante.csprojResolveAssemblyReference.cache
 C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\obj\Debug\CRUDRestaurante.dll
 C:\Users\20131011110029\Downloads\CRUD-Restaurante-master\CRUDRestaurante\obj\Debug\CRUDRestaurante.pdb
+C:\POS\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.csproj.App.config
+C:\POS\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.csprojResolveAssemblyReference.cache
+C:\POS\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.dll
+C:\POS\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.pdb

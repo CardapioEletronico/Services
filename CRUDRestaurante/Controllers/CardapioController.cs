@@ -31,7 +31,7 @@ namespace CRUDRestaurante.Controllers
         {
             Models.Cardapio c = JsonConvert.DeserializeObject<Models.Cardapio>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var cardapio = (from f in dc.Filas where f.Id == id select f).Single();
+            var cardapio = (from f in dc.Cardapios where f.Id == id select f).Single();
             cardapio.Descricao = c.Descricao;
             cardapio.Restaurante_id = c.Restaurante_id;
             dc.SubmitChanges();
