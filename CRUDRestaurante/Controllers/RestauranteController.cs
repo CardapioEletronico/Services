@@ -37,10 +37,18 @@ namespace CRUDRestaurante.Controllers
 
         public void Post([FromBody] string value)
         {
-            List<Models.Restaurante> r = JsonConvert.DeserializeObject<List<Models.Restaurante>>(value);
+            //string postData = Encoding.UTF8.GetString(value);
+            string postData = value;
+
+            Models.Restaurante r = JsonConvert.DeserializeObject<Models.Restaurante>(postData);
+            Models.CardapioDataContext dc = new Models.CardapioDataContext();
+            dc.Restaurantes.InsertOnSubmit(r);
+            dc.SubmitChanges();
+
+            /*List<Models.Restaurante> r = JsonConvert.DeserializeObject<List<Models.Restaurante>>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
             dc.Restaurantes.InsertAllOnSubmit(r);
-            dc.SubmitChanges();
+            dc.SubmitChanges();*/
         }
     }
 }
