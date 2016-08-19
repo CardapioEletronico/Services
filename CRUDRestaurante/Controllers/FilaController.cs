@@ -8,30 +8,30 @@ using System.Web.Http;
 
 namespace CRUDRestaurante.Controllers
 {
-    public class RestauranteController : ApiController
+    public class FilaController : ApiController
     {
-        public IEnumerable<Models.Restaurante> Get()
+        public IEnumerable<Models.Fila> Get()
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var r1 = from r in dc.Restaurantes select r;
+            var r1 = from r in dc.Filas select r;
             return r1.ToList();
         }
 
         public void Delete(int id)
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            Models.Restaurante r = (from f in dc.Restaurantes where f.Id == id select f).Single();
-            dc.Restaurantes.DeleteOnSubmit(r);
+            Models.Fila r = (from f in dc.Filas where f.Id == id select f).Single();
+            dc.Filas.DeleteOnSubmit(r);
             dc.SubmitChanges();
         }
 
         //O bom e velho update
         public void Put(int id, [FromBody] string value)
         {
-            Models.Restaurante x = JsonConvert.DeserializeObject<Models.Restaurante>(value);
+            Models.Fila x = JsonConvert.DeserializeObject<Models.Fila>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            Models.Restaurante rest = (from f in dc.Restaurantes where f.Id == id select f).Single();
-            rest.Descricao = x.Descricao;
+            Models.Fila fila = (from f in dc.Filas where f.Id == id select f).Single();
+            fila.Descricao = x.Descricao;
             dc.SubmitChanges();
         }
 
@@ -40,9 +40,9 @@ namespace CRUDRestaurante.Controllers
             //string postData = Encoding.UTF8.GetString(value);
             string postData = value;
 
-            Models.Restaurante r = JsonConvert.DeserializeObject<Models.Restaurante>(postData);
+            Models.Fila r = JsonConvert.DeserializeObject<Models.Fila>(postData);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Restaurantes.InsertOnSubmit(r);
+            dc.Filas.InsertOnSubmit(r);
             dc.SubmitChanges();
 
         }
