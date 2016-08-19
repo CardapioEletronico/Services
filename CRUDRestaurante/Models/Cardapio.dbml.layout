@@ -27,7 +27,7 @@
         <elementListCompartment Id="12324b75-57f9-4bd9-8bad-a76d85135fa7" absoluteBounds="7.8900000000000006, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.125 : 4.44314697265625); (7.875 : 4.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.125 : 4.44314697265625); (7.875 : 4.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CardapioDataContext/Cardapio/Cardapio_Produto" />
       <nodes>
         <classShapeMoniker Id="88084fa6-0617-4ff1-9140-88701c804942" />
@@ -40,7 +40,7 @@
         <elementListCompartment Id="280d8b87-f057-4098-a4e6-e6f062ad4555" absoluteBounds="4.265, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.25 : 6.58339730989583); (8.875 : 6.58339730989583); (8.875 : 5.90549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.25 : 6.58339730989583); (8.875 : 6.58339730989583); (8.875 : 5.90549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CardapioDataContext/Fila/Fila_Produto" />
       <nodes>
         <classShapeMoniker Id="03604f76-99df-4ecf-bd40-52793ea8c351" />
@@ -60,7 +60,7 @@
         <elementListCompartment Id="ec5ec071-a582-43fc-839d-49274bfc6ca8" absoluteBounds="8.515, 8.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(9.4375 : 5.90549967447917); (9.4375 : 7.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.4375 : 5.90549967447917); (9.4375 : 7.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CardapioDataContext/Produto/Produto_ItemPedido" />
       <nodes>
         <classShapeMoniker Id="d1c8ad30-b396-4dca-81e6-3b7fe58d916d" />
@@ -73,7 +73,7 @@
         <elementListCompartment Id="e506f0c3-09a9-4da9-9510-473440f3739a" absoluteBounds="5.14, 8.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.125 : 8.98159912109375); (8.5 : 8.98159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.125 : 8.98159912109375); (8.5 : 8.98159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CardapioDataContext/Pedido/Pedido_ItemPedido" />
       <nodes>
         <classShapeMoniker Id="855d2ccf-089b-4aa8-848f-c9cb3a47fc2c" />
@@ -86,18 +86,31 @@
         <elementListCompartment Id="d71df011-5bc6-424f-9fed-86bbb14d857e" absoluteBounds="1.0150000000000001, 8.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3 : 8.85179768880208); (5.125 : 8.85179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3 : 8.85179768880208); (5.125 : 8.85179768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/CardapioDataContext/Mesa/Mesa_Pedido" />
       <nodes>
         <classShapeMoniker Id="31c0d291-7c04-4ebb-9447-387ff0e9efd1" />
         <classShapeMoniker Id="855d2ccf-089b-4aa8-848f-c9cb3a47fc2c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.9375 : 4.94399251302083); (1.9375 : 7.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.71875 : 4.94399251302083); (2.71875 : 7.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/CardapioDataContext/Restaurante/Restaurante_Mesa" />
       <nodes>
         <classShapeMoniker Id="f3691f85-229d-41ef-87af-589ed66857a1" />
         <classShapeMoniker Id="31c0d291-7c04-4ebb-9447-387ff0e9efd1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d6c6ac9a-c896-4e9d-9c3a-91020d724b0e" absoluteBounds="0.5, 6, 2, 1.3862939453125">
+      <DataClassMoniker Name="/CardapioDataContext/AdminRest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="324310ab-e049-44fa-9cec-6e58bb88e7a0" absoluteBounds="0.51500000000000012, 6.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.6875 : 4.94399251302083); (1.6875 : 6)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CardapioDataContext/Restaurante/Restaurante_AdminRest" />
+      <nodes>
+        <classShapeMoniker Id="f3691f85-229d-41ef-87af-589ed66857a1" />
+        <classShapeMoniker Id="d6c6ac9a-c896-4e9d-9c3a-91020d724b0e" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
