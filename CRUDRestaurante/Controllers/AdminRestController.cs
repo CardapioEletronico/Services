@@ -18,6 +18,8 @@ namespace CRUDRestaurante.Controllers
         }
 
         // POST api/values
+        [Route("api/adminrest/{string:usuario}")]
+        [HttpPost]
         public void Post([FromBody]string value)
         {
             List<Models.AdminRest> f = JsonConvert.DeserializeObject<List<Models.AdminRest>>(value);
@@ -27,7 +29,8 @@ namespace CRUDRestaurante.Controllers
         }
 
         // PUT api/values/5
-        [Route("api/adminsrest/{string:usuario}")]
+        [Route("api/adminrest/{string:usuario}")]
+        [HttpPut]
         public void Put(string usuario, [FromBody]string value)
         {
             Models.AdminRest c = JsonConvert.DeserializeObject<Models.AdminRest>(value);
@@ -40,7 +43,8 @@ namespace CRUDRestaurante.Controllers
         }
 
         // DELETE api/values/5]
-        [Route("api/adminsrest/{string:usuario}")]
+        [Route("api/adminrest/{string:usuario}")]
+        [HttpDelete]
         public void Delete(string usuario)
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
