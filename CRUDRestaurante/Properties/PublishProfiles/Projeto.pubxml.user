@@ -83,7 +83,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/19/2016 10:12:10</publishTime>
     </File>
     <File Include="bin/CRUDRestaurante.dll">
-      <publishTime>08/22/2016 10:04:30</publishTime>
+      <publishTime>08/22/2016 11:14:09</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>08/19/2016 10:12:15</publishTime>
@@ -218,7 +218,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/19/2016 10:12:11</publishTime>
     </File>
     <File Include="Models/Cardapio.dbml">
-      <publishTime>08/22/2016 10:04:06</publishTime>
+      <publishTime>08/22/2016 11:09:00</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>08/19/2016 10:12:14</publishTime>
