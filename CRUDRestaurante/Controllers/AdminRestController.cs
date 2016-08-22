@@ -18,7 +18,7 @@ namespace CRUDRestaurante.Controllers
         }
 
         // POST api/values
-        [Route("api/adminrest/{string:usuario}")]
+        [Route("api/adminrest/{usuario}")]
         [HttpPost]
         public void Post([FromBody]string value)
         {
@@ -29,7 +29,7 @@ namespace CRUDRestaurante.Controllers
         }
 
         // PUT api/values/5
-        [Route("api/adminrest/{string:usuario}")]
+        [Route("api/adminrest/{usuario}")]
         [HttpPut]
         public void Put(string usuario, [FromBody]string value)
         {
@@ -43,7 +43,7 @@ namespace CRUDRestaurante.Controllers
         }
 
         // DELETE api/values/5]
-        [Route("api/adminrest/{string:usuario}")]
+        [Route("api/adminrest/{usuario}")]
         [HttpDelete]
         public void Delete(string usuario)
         {

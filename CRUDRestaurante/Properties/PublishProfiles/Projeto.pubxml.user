@@ -83,7 +83,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/19/2016 10:12:10</publishTime>
     </File>
     <File Include="bin/CRUDRestaurante.dll">
-      <publishTime>08/22/2016 11:17:44</publishTime>
+      <publishTime>08/22/2016 11:37:51</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>08/19/2016 10:12:15</publishTime>
