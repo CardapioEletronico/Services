@@ -130,3 +130,7 @@ C:\POS\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.csproj.App.config
 C:\POS\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.csprojResolveAssemblyReference.cache
 C:\POS\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.dll
 C:\POS\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.pdb
+C:\Users\gilson\Desktop\Projeto Cardápio - Arquivos\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.csproj.App.config
+C:\Users\gilson\Desktop\Projeto Cardápio - Arquivos\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.csprojResolveAssemblyReference.cache
+C:\Users\gilson\Desktop\Projeto Cardápio - Arquivos\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.dll
+C:\Users\gilson\Desktop\Projeto Cardápio - Arquivos\Servi-os\CRUDRestaurante\obj\Debug\CRUDRestaurante.pdb

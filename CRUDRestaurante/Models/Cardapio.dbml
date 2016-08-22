@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ProjetoCardapio" Class="CardapioDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=valera;Initial Catalog=ProjetoCardapio;User ID=ProjetoCardapio" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ProjetoCardapioConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Restaurante" Member="Restaurantes">
-    <Type Name="Restaurante">
+  <Table Name="dbo.AdminRest" Member="AdminRests">
+    <Type Name="AdminRest">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Restaurante_Cardapio" Member="Cardapios" AccessModifier="Internal" ThisKey="Id" OtherKey="Restaurante_id" Type="Cardapio" />
-      <Association Name="Restaurante_Mesa" Member="Mesas" AccessModifier="Internal" ThisKey="Id" OtherKey="Restaurante_Id" Type="Mesa" />
-      <Association Name="Restaurante_AdminRest" Member="AdminRests" AccessModifier="Internal" ThisKey="Id" OtherKey="Restaurante_id" Type="AdminRest" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Restaurante_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Restaurante_AdminRest" Member="Restaurante" AccessModifier="Internal" ThisKey="Restaurante_Id" OtherKey="Id" Type="Restaurante" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Cardapio" Member="Cardapios">
@@ -14,23 +13,9 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Restaurante_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Cardapio_Produto" Member="Produtos" AccessModifier="Internal" ThisKey="Id" OtherKey="Cardapio_id" Type="Produto" />
       <Association Name="Cardapio_Fila" Member="Filas" AccessModifier="Internal" ThisKey="Id" OtherKey="Cardapio_id" Type="Fila" />
-      <Association Name="Restaurante_Cardapio" Member="Restaurante" AccessModifier="Internal" ThisKey="Restaurante_id" OtherKey="Id" Type="Restaurante" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Produto" Member="Produtos">
-    <Type Name="Produto">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Descricao" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Preco" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
-      <Column Name="Foto" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="NomeDescricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Cardapio_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Fila_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Produto_ItemPedido" Member="ItemPedidos" AccessModifier="Internal" ThisKey="Id" OtherKey="Produto_Id" Type="ItemPedido" />
-      <Association Name="Cardapio_Produto" Member="Cardapio" AccessModifier="Internal" ThisKey="Cardapio_id" OtherKey="Id" Type="Cardapio" IsForeignKey="true" />
-      <Association Name="Fila_Produto" Member="Fila" AccessModifier="Internal" ThisKey="Fila_id" OtherKey="Id" Type="Fila" IsForeignKey="true" />
+      <Association Name="Cardapio_Produto" Member="Produtos" AccessModifier="Internal" ThisKey="Id" OtherKey="Cardapio_id" Type="Produto" />
+      <Association Name="Restaurante_Cardapio" Member="Restaurante" ThisKey="Restaurante_id" OtherKey="Id" Type="Restaurante" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Fila" Member="Filas">
@@ -50,19 +35,8 @@
       <Column Name="Situacao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Produto_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Pedido_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Pedido_ItemPedido" Member="Pedido" ThisKey="Pedido_Id" OtherKey="Id" Type="Pedido" IsForeignKey="true" />
       <Association Name="Produto_ItemPedido" Member="Produto" AccessModifier="Internal" ThisKey="Produto_Id" OtherKey="Id" Type="Produto" IsForeignKey="true" />
-      <Association Name="Pedido_ItemPedido" Member="Pedido" AccessModifier="Internal" ThisKey="Pedido_Id" OtherKey="Id" Type="Pedido" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Pedido" Member="Pedidos">
-    <Type Name="Pedido">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="Data" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Mesa_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Pedido_ItemPedido" Member="ItemPedidos" AccessModifier="Internal" ThisKey="Id" OtherKey="Pedido_Id" Type="ItemPedido" />
-      <Association Name="Mesa_Pedido" Member="Mesa" AccessModifier="Internal" ThisKey="Mesa_Id" OtherKey="Id" Type="Mesa" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Mesa" Member="Mesas">
@@ -75,12 +49,38 @@
       <Association Name="Restaurante_Mesa" Member="Restaurante" AccessModifier="Internal" ThisKey="Restaurante_Id" OtherKey="Id" Type="Restaurante" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.AdminRest" Member="AdminRests">
-    <Type Name="AdminRest">
-      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Restaurante_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Senha" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Restaurante_AdminRest" Member="Restaurante" AccessModifier="Internal" ThisKey="Restaurante_id" OtherKey="Id" Type="Restaurante" IsForeignKey="true" />
+  <Table Name="dbo.Pedido" Member="Pedidos">
+    <Type Name="Pedido">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ValorTotal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Data" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mesa_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Pedido_ItemPedido" Member="ItemPedidos" ThisKey="Id" OtherKey="Pedido_Id" Type="ItemPedido" />
+      <Association Name="Mesa_Pedido" Member="Mesa" AccessModifier="Internal" ThisKey="Mesa_Id" OtherKey="Id" Type="Mesa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Produto" Member="Produtos">
+    <Type Name="Produto">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Preco" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Foto" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="NomeDescricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cardapio_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fila_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Produto_ItemPedido" Member="ItemPedidos" AccessModifier="Internal" ThisKey="Id" OtherKey="Produto_Id" Type="ItemPedido" />
+      <Association Name="Cardapio_Produto" Member="Cardapio" AccessModifier="Internal" ThisKey="Cardapio_id" OtherKey="Id" Type="Cardapio" IsForeignKey="true" />
+      <Association Name="Fila_Produto" Member="Fila" AccessModifier="Internal" ThisKey="Fila_id" OtherKey="Id" Type="Fila" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Restaurante" Member="Restaurantes">
+    <Type Name="Restaurante">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Restaurante_AdminRest" Member="AdminRests" AccessModifier="Internal" ThisKey="Id" OtherKey="Restaurante_Id" Type="AdminRest" />
+      <Association Name="Restaurante_Cardapio" Member="Cardapios" AccessModifier="Internal" ThisKey="Id" OtherKey="Restaurante_id" Type="Cardapio" />
+      <Association Name="Restaurante_Mesa" Member="Mesas" AccessModifier="Internal" ThisKey="Id" OtherKey="Restaurante_Id" Type="Mesa" />
     </Type>
   </Table>
 </Database>

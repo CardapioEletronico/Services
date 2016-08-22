@@ -27,21 +27,21 @@ namespace CRUDRestaurante.Controllers
         }
 
         // PUT api/values/5
-        public void Put(string Usuario, [FromBody]string value)
+        public void Put(int id, [FromBody]string value)
         {
             Models.AdminRest c = JsonConvert.DeserializeObject<Models.AdminRest>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var adminRest = (from f in dc.AdminRests where f.Usuario == Usuario select f).Single();
+            var adminRest = (from f in dc.AdminRests where f.Id == id select f).Single();
             adminRest.Senha = c.Senha;
-            adminRest.Restaurante_id = c.Restaurante_id;
+            adminRest.Restaurante_Id = c.Restaurante_Id;
             dc.SubmitChanges();
         }
 
         // DELETE api/values/5
-        public void Delete(string Usuario)
+        public void Delete(int id)
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var adminRest = (from f in dc.AdminRests where f.Usuario == Usuario select f).Single();
+            var adminRest = (from f in dc.AdminRests where f.Id == id select f).Single();
             dc.AdminRests.DeleteOnSubmit(adminRest);
             dc.SubmitChanges();
         }
