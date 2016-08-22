@@ -17,9 +17,7 @@ namespace CRUDRestaurante.Controllers
             return listaAdminRest.ToList();
         }
 
-        // POST api/values
-        [Route("api/adminrest/{usuario}")]
-        [HttpPost]
+        
         public void Post([FromBody]string value)
         {
             List<Models.AdminRest> f = JsonConvert.DeserializeObject<List<Models.AdminRest>>(value);
