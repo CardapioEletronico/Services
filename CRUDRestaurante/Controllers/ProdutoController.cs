@@ -18,26 +18,24 @@ namespace CRUDRestaurante.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Models.Produto produto)
         {
-            List<Models.Produto> f = JsonConvert.DeserializeObject<List<Models.Produto>>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Produtos.InsertAllOnSubmit(f);
+            dc.Produtos.InsertOnSubmit(new Models.Produto() { Descricao = produto.Descricao, Preco = produto.Preco, Foto = produto.Foto, NomeDescricao = produto.NomeDescricao, Cardapio_id = produto.Cardapio_id, Fila_id = produto.Fila_id});
             dc.SubmitChanges();
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody] Models.Produto produto)
         {
-            Models.Produto c = JsonConvert.DeserializeObject<Models.Produto>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var produto = (from f in dc.Produtos where f.Id == id select f).Single();
-            produto.Descricao = c.Descricao;
-            produto.Preco = c.Preco;
-            produto.Foto = c.Foto;
-            produto.NomeDescricao = c.Descricao;
-            produto.Cardapio_id = c.Cardapio_id;
-            produto.Fila_id = c.Fila_id;
+            var x = (from f in dc.Produtos where f.Id == id select f).Single();
+            x.Descricao = produto.Descricao;
+            x.Preco = produto.Preco;
+            x.Foto = produto.Foto;
+            x.NomeDescricao = produto.Descricao;
+            x.Cardapio_id = produto.Cardapio_id;
+            x.Fila_id = produto.Fila_id;
             dc.SubmitChanges();
         }
 

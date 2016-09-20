@@ -18,22 +18,21 @@ namespace CRUDRestaurante.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public void Post([FromBody] Models.Cardapio cardapio)
         {
-            List<Models.Cardapio> f = JsonConvert.DeserializeObject<List<Models.Cardapio>>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Cardapios.InsertAllOnSubmit(f);
+            dc.Cardapios.InsertOnSubmit(new Models.Cardapio() { Descricao=cardapio.Descricao, Restaurante_id = cardapio.Restaurante_id});
             dc.SubmitChanges();
+
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Models.Cardapio cardapio)
         {
-            Models.Cardapio c = JsonConvert.DeserializeObject<Models.Cardapio>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var cardapio = (from f in dc.Cardapios where f.Id == id select f).Single();
-            cardapio.Descricao = c.Descricao;
-            cardapio.Restaurante_id = c.Restaurante_id;
+            var car = (from f in dc.Cardapios where f.Id == id select f).Single();
+            car.Descricao = cardapio.Descricao;
+            //car.Restaurante_id = c.Restaurante_id;
             dc.SubmitChanges();
         }
 
