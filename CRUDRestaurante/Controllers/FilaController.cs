@@ -26,25 +26,20 @@ namespace CRUDRestaurante.Controllers
         }
 
         //O bom e velho update
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody]Models.Fila fila)
         {
-            Models.Fila x = JsonConvert.DeserializeObject<Models.Fila>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            Models.Fila fila = (from f in dc.Filas where f.Id == id select f).Single();
-            fila.Descricao = x.Descricao;
+            Models.Fila fil = (from f in dc.Filas where f.Id == id select f).Single();
+            fil.Descricao = fila.Descricao;
             dc.SubmitChanges();
         }
 
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Models.Fila fila)
         {
             //string postData = Encoding.UTF8.GetString(value);
-            string postData = value;
-
-            Models.Fila r = JsonConvert.DeserializeObject<Models.Fila>(postData);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Filas.InsertOnSubmit(r);
+            dc.Filas.InsertOnSubmit(new Models.Fila() { Descricao = fila.Descricao, Cardapio_id = fila.Cardapio_id});
             dc.SubmitChanges();
-
         }
     }
 }
