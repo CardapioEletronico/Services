@@ -25,26 +25,19 @@ namespace CRUDRestaurante.Controllers
             dc.SubmitChanges();
         }
 
-        //O bom e velho update
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Models.Restaurante restaurante)
         {
-            Models.Restaurante x = JsonConvert.DeserializeObject<Models.Restaurante>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
             Models.Restaurante rest = (from f in dc.Restaurantes where f.Id == id select f).Single();
-            rest.Descricao = x.Descricao;
+            rest.Descricao = restaurante.Descricao;
             dc.SubmitChanges();
         }
 
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Models.Restaurante restaurante)
         {
-            //string postData = Encoding.UTF8.GetString(value);
-            string postData = value;
-
-            Models.Restaurante r = JsonConvert.DeserializeObject<Models.Restaurante>(postData);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Restaurantes.InsertOnSubmit(r);
+            dc.Restaurantes.InsertOnSubmit(new Models.Restaurante() { Descricao = restaurante.Descricao });
             dc.SubmitChanges();
-
         }
     }
 }
