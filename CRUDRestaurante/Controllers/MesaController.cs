@@ -17,38 +17,22 @@ namespace CRUDRestaurante.Controllers
             return mesas.ToList();
         }
 
-        public IEnumerable<Models.Mesa> GetIdRestaurante(int idRestaurante, [FromBody] string value)
-        {
-            Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var mesas = from f in dc.Mesas where f.Restaurante_Id == idRestaurante select f;
-            return mesas.ToList();
-        }
-
-        public IEnumerable<Models.Mesa> GetDisponiveis(int idRestaurante, [FromBody] string value)
-        {
-            Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var mesas = (from f in dc.Mesas where f.Restaurante_Id == idRestaurante && f.Disponivel == true select f);
-            return mesas.ToList();
-        }
-
         // POST api/values
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Models.Mesa mesa)
         {
-            List<Models.Mesa> f = JsonConvert.DeserializeObject<List<Models.Mesa>>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Mesas.InsertAllOnSubmit(f);
+            dc.Mesas.InsertOnSubmit(new Models.Mesa() { Disponivel = mesa.Disponivel, Restaurante_Id = mesa.Restaurante_Id, Numero = mesa.Numero});
             dc.SubmitChanges();
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Models.Mesa mesa)
         {
-            Models.Mesa c = JsonConvert.DeserializeObject<Models.Mesa>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var mesa = (from f in dc.Mesas where f.Id == id select f).Single();
-            mesa.Disponivel = c.Disponivel;
-            mesa.Restaurante_Id = c.Restaurante_Id;
-            mesa.Numero = c.Numero;
+            var mes = (from f in dc.Mesas where f.Id == id select f).Single();
+            mes.Disponivel = mesa.Disponivel;
+            mes.Restaurante_Id = mesa.Restaurante_Id;
+            mes.Numero = mesa.Numero;
             dc.SubmitChanges();
         }
 
