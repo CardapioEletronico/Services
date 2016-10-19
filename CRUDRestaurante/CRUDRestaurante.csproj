@@ -197,6 +197,7 @@
     <Compile Include="Controllers\AdminRestController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\FilaController.cs" />
+    <Compile Include="Controllers\GerentePedidosController.cs" />
     <Compile Include="Controllers\MesaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\RestauranteController.cs" />
