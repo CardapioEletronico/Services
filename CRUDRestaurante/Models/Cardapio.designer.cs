@@ -54,6 +54,9 @@ namespace CRUDRestaurante.Models
     partial void InsertCardapio(Cardapio instance);
     partial void UpdateCardapio(Cardapio instance);
     partial void DeleteCardapio(Cardapio instance);
+    partial void InsertAdminSistema(AdminSistema instance);
+    partial void UpdateAdminSistema(AdminSistema instance);
+    partial void DeleteAdminSistema(AdminSistema instance);
     #endregion
 		
 		public CardapioDataContext() : 
@@ -147,6 +150,14 @@ namespace CRUDRestaurante.Models
 			get
 			{
 				return this.GetTable<Cardapio>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AdminSistema> AdminSistemas
+		{
+			get
+			{
+				return this.GetTable<AdminSistema>();
 			}
 		}
 	}
@@ -1865,6 +1876,92 @@ namespace CRUDRestaurante.Models
 		{
 			this.SendPropertyChanging();
 			entity.Cardapio = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AdminSistema")]
+	public partial class AdminSistema : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Usuario;
+		
+		private string _Senha;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUsuarioChanging(string value);
+    partial void OnUsuarioChanged();
+    partial void OnSenhaChanging(string value);
+    partial void OnSenhaChanged();
+    #endregion
+		
+		public AdminSistema()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Usuario
+		{
+			get
+			{
+				return this._Usuario;
+			}
+			set
+			{
+				if ((this._Usuario != value))
+				{
+					this.OnUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Usuario = value;
+					this.SendPropertyChanged("Usuario");
+					this.OnUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Senha", DbType="VarChar(128)")]
+		public string Senha
+		{
+			get
+			{
+				return this._Senha;
+			}
+			set
+			{
+				if ((this._Senha != value))
+				{
+					this.OnSenhaChanging(value);
+					this.SendPropertyChanging();
+					this._Senha = value;
+					this.SendPropertyChanged("Senha");
+					this.OnSenhaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

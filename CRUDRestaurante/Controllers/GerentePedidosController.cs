@@ -10,7 +10,7 @@ namespace CRUDRestaurante.Controllers
 {
     public class GerentePedidosController : ApiController
     {
-        public IEnumerable<Models.GerentePedido> Get()
+        /*public IEnumerable<Models.GerentePedido> Get()
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
             var listaGerentePedidos = from f in dc.GerentePedidos select f;
@@ -48,6 +48,6 @@ namespace CRUDRestaurante.Controllers
             var gerPedido = (from f in dc.GerentePedidos where f.Usuario == usuario select f).Single();
             dc.GerentePedidos.DeleteOnSubmit(gerPedido);
             dc.SubmitChanges();
-        }
+        }*/
     }
 }

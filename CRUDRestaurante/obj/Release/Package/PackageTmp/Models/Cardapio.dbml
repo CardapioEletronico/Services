@@ -83,4 +83,10 @@
       <Association Name="Restaurante_Cardapio" Member="Restaurante" AccessModifier="Internal" ThisKey="Restaurante_id" OtherKey="Id" Type="Restaurante" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
+  <Table Name="dbo.AdminSistema" Member="AdminSistemas">
+    <Type Name="AdminSistema">
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

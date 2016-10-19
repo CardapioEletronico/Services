@@ -17,11 +17,10 @@ namespace CRUDRestaurante.Controllers
             return r1.ToList();
         }
 
-        public void Delete(int id)
+        public void Post([FromBody] Models.Restaurante restaurante)
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            Models.Restaurante r = (from f in dc.Restaurantes where f.Id == id select f).Single();
-            dc.Restaurantes.DeleteOnSubmit(r);
+            dc.Restaurantes.InsertOnSubmit(new Models.Restaurante() { Descricao = restaurante.Descricao });
             dc.SubmitChanges();
         }
 
@@ -33,11 +32,13 @@ namespace CRUDRestaurante.Controllers
             dc.SubmitChanges();
         }
 
-        public void Post([FromBody] Models.Restaurante restaurante)
+        public void Delete(int id)
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Restaurantes.InsertOnSubmit(new Models.Restaurante() { Descricao = restaurante.Descricao });
+            Models.Restaurante r = (from f in dc.Restaurantes where f.Id == id select f).Single();
+            dc.Restaurantes.DeleteOnSubmit(r);
             dc.SubmitChanges();
         }
+
     }
 }
