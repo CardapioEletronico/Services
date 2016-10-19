@@ -574,3 +574,6 @@ C:\Git\Services\CRUDRestaurante\obj\Release\CRUDRestaurante.csproj.App.config
 C:\Git\Services\CRUDRestaurante\obj\Release\CRUDRestaurante.csprojResolveAssemblyReference.cache
 C:\Git\Services\CRUDRestaurante\obj\Release\CRUDRestaurante.dll
 C:\Git\Services\CRUDRestaurante\obj\Release\CRUDRestaurante.pdb
+C:\Git\Services\CRUDRestaurante\bin\System.Web.Cors.dll
+C:\Git\Services\CRUDRestaurante\bin\System.Web.Http.Cors.dll
+C:\Git\Services\CRUDRestaurante\bin\System.Web.Http.Cors.xml

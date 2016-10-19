@@ -83,7 +83,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/18/2016 22:00:06</publishTime>
     </File>
     <File Include="bin/CRUDRestaurante.dll">
-      <publishTime>10/19/2016 07:51:46</publishTime>
+      <publishTime>10/19/2016 09:25:37</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>10/18/2016 22:00:14</publishTime>
@@ -160,8 +160,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/System.Net.Http.Primitives.dll">
       <publishTime>10/18/2016 22:00:18</publishTime>
     </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>01/28/2015 04:01:46</publishTime>
+    </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>10/18/2016 22:00:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>01/28/2015 04:03:04</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
       <publishTime>10/18/2016 22:00:15</publishTime>
@@ -221,7 +227,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/19/2016 07:49:28</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/18/2016 22:00:13</publishTime>
+      <publishTime>10/19/2016 09:24:43</publishTime>
     </File>
     <File Include="Scripts/ai.0.22.9-build00167.js">
       <publishTime>10/18/2016 22:00:07</publishTime>
@@ -272,7 +278,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/18/2016 22:00:07</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/19/2016 07:51:49</publishTime>
+      <publishTime>10/19/2016 09:25:39</publishTime>
     </File>
   </ItemGroup>
 </Project>
