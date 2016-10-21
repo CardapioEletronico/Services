@@ -202,7 +202,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AdminRestController.cs" />
+    <Compile Include="Controllers\UsuarioSistemaController.cs" />
     <Compile Include="Controllers\AdminSistemaController.cs" />
     <Compile Include="Controllers\CardapioController.cs" />
     <Compile Include="Controllers\FilaController.cs" />
