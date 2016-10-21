@@ -26,7 +26,7 @@ namespace CRUDRestaurante.Controllers
         }
 
         // PUT api/values/5
-        [Route("api/adminrest/{usuario}")]
+        [Route("api/usuariosistema/{usuario}")]
         [HttpPut]
         public void Put(string usuario, [FromBody]string value)
         {
@@ -44,7 +44,7 @@ namespace CRUDRestaurante.Controllers
         }
 
         // DELETE api/values/5]
-        [Route("api/adminrest/{usuario}")]
+        [Route("api/usuariosistema/{usuario}")]
         [HttpDelete]
         public void Delete(string usuario)
         {
