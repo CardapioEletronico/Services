@@ -39,6 +39,5 @@ namespace CRUDRestaurante.Controllers
             dc.Restaurantes.DeleteOnSubmit(r);
             dc.SubmitChanges();
         }
-
     }
 }
