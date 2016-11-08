@@ -45,9 +45,6 @@ namespace CRUDRestaurante.Models
     partial void InsertFila(Fila instance);
     partial void UpdateFila(Fila instance);
     partial void DeleteFila(Fila instance);
-    partial void InsertProduto(Produto instance);
-    partial void UpdateProduto(Produto instance);
-    partial void DeleteProduto(Produto instance);
     partial void InsertCardapio(Cardapio instance);
     partial void UpdateCardapio(Cardapio instance);
     partial void DeleteCardapio(Cardapio instance);
@@ -57,6 +54,9 @@ namespace CRUDRestaurante.Models
     partial void InsertUsuarioSistema(UsuarioSistema instance);
     partial void UpdateUsuarioSistema(UsuarioSistema instance);
     partial void DeleteUsuarioSistema(UsuarioSistema instance);
+    partial void InsertProduto(Produto instance);
+    partial void UpdateProduto(Produto instance);
+    partial void DeleteProduto(Produto instance);
     #endregion
 		
 		public CardapioDataContext() : 
@@ -129,14 +129,6 @@ namespace CRUDRestaurante.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Produto> Produtos
-		{
-			get
-			{
-				return this.GetTable<Produto>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Cardapio> Cardapios
 		{
 			get
@@ -158,6 +150,14 @@ namespace CRUDRestaurante.Models
 			get
 			{
 				return this.GetTable<UsuarioSistema>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Produto> Produtos
+		{
+			get
+			{
+				return this.GetTable<Produto>();
 			}
 		}
 	}
@@ -1205,322 +1205,6 @@ namespace CRUDRestaurante.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Produto")]
-	public partial class Produto : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Descricao;
-		
-		private decimal _Preco;
-		
-		private string _Foto;
-		
-		private string _NomeDescricao;
-		
-		private int _Cardapio_id;
-		
-		private System.Nullable<int> _Fila_id;
-		
-		private EntitySet<ItemPedido> _ItemPedidos;
-		
-		private EntityRef<Fila> _Fila;
-		
-		private EntityRef<Cardapio> _Cardapio;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnDescricaoChanging(string value);
-    partial void OnDescricaoChanged();
-    partial void OnPrecoChanging(decimal value);
-    partial void OnPrecoChanged();
-    partial void OnFotoChanging(string value);
-    partial void OnFotoChanged();
-    partial void OnNomeDescricaoChanging(string value);
-    partial void OnNomeDescricaoChanged();
-    partial void OnCardapio_idChanging(int value);
-    partial void OnCardapio_idChanged();
-    partial void OnFila_idChanging(System.Nullable<int> value);
-    partial void OnFila_idChanged();
-    #endregion
-		
-		public Produto()
-		{
-			this._ItemPedidos = new EntitySet<ItemPedido>(new Action<ItemPedido>(this.attach_ItemPedidos), new Action<ItemPedido>(this.detach_ItemPedidos));
-			this._Fila = default(EntityRef<Fila>);
-			this._Cardapio = default(EntityRef<Cardapio>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(200)")]
-		public string Descricao
-		{
-			get
-			{
-				return this._Descricao;
-			}
-			set
-			{
-				if ((this._Descricao != value))
-				{
-					this.OnDescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._Descricao = value;
-					this.SendPropertyChanged("Descricao");
-					this.OnDescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Preco", DbType="Decimal(8,2) NOT NULL")]
-		public decimal Preco
-		{
-			get
-			{
-				return this._Preco;
-			}
-			set
-			{
-				if ((this._Preco != value))
-				{
-					this.OnPrecoChanging(value);
-					this.SendPropertyChanging();
-					this._Preco = value;
-					this.SendPropertyChanged("Preco");
-					this.OnPrecoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Foto", DbType="VarChar(255)")]
-		public string Foto
-		{
-			get
-			{
-				return this._Foto;
-			}
-			set
-			{
-				if ((this._Foto != value))
-				{
-					this.OnFotoChanging(value);
-					this.SendPropertyChanging();
-					this._Foto = value;
-					this.SendPropertyChanged("Foto");
-					this.OnFotoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NomeDescricao", DbType="VarChar(50)")]
-		public string NomeDescricao
-		{
-			get
-			{
-				return this._NomeDescricao;
-			}
-			set
-			{
-				if ((this._NomeDescricao != value))
-				{
-					this.OnNomeDescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._NomeDescricao = value;
-					this.SendPropertyChanged("NomeDescricao");
-					this.OnNomeDescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cardapio_id", DbType="Int NOT NULL")]
-		public int Cardapio_id
-		{
-			get
-			{
-				return this._Cardapio_id;
-			}
-			set
-			{
-				if ((this._Cardapio_id != value))
-				{
-					if (this._Cardapio.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCardapio_idChanging(value);
-					this.SendPropertyChanging();
-					this._Cardapio_id = value;
-					this.SendPropertyChanged("Cardapio_id");
-					this.OnCardapio_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fila_id", DbType="Int")]
-		public System.Nullable<int> Fila_id
-		{
-			get
-			{
-				return this._Fila_id;
-			}
-			set
-			{
-				if ((this._Fila_id != value))
-				{
-					if (this._Fila.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnFila_idChanging(value);
-					this.SendPropertyChanging();
-					this._Fila_id = value;
-					this.SendPropertyChanged("Fila_id");
-					this.OnFila_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_ItemPedido", Storage="_ItemPedidos", ThisKey="Id", OtherKey="Produto_Id")]
-		internal EntitySet<ItemPedido> ItemPedidos
-		{
-			get
-			{
-				return this._ItemPedidos;
-			}
-			set
-			{
-				this._ItemPedidos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fila_Produto", Storage="_Fila", ThisKey="Fila_id", OtherKey="Id", IsForeignKey=true)]
-		internal Fila Fila
-		{
-			get
-			{
-				return this._Fila.Entity;
-			}
-			set
-			{
-				Fila previousValue = this._Fila.Entity;
-				if (((previousValue != value) 
-							|| (this._Fila.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Fila.Entity = null;
-						previousValue.Produtos.Remove(this);
-					}
-					this._Fila.Entity = value;
-					if ((value != null))
-					{
-						value.Produtos.Add(this);
-						this._Fila_id = value.Id;
-					}
-					else
-					{
-						this._Fila_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Fila");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cardapio_Produto", Storage="_Cardapio", ThisKey="Cardapio_id", OtherKey="Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		internal Cardapio Cardapio
-		{
-			get
-			{
-				return this._Cardapio.Entity;
-			}
-			set
-			{
-				Cardapio previousValue = this._Cardapio.Entity;
-				if (((previousValue != value) 
-							|| (this._Cardapio.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cardapio.Entity = null;
-						previousValue.Produtos.Remove(this);
-					}
-					this._Cardapio.Entity = value;
-					if ((value != null))
-					{
-						value.Produtos.Add(this);
-						this._Cardapio_id = value.Id;
-					}
-					else
-					{
-						this._Cardapio_id = default(int);
-					}
-					this.SendPropertyChanged("Cardapio");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_ItemPedidos(ItemPedido entity)
-		{
-			this.SendPropertyChanging();
-			entity.Produto = this;
-		}
-		
-		private void detach_ItemPedidos(ItemPedido entity)
-		{
-			this.SendPropertyChanging();
-			entity.Produto = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cardapio")]
 	public partial class Cardapio : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2058,6 +1742,322 @@ namespace CRUDRestaurante.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Produto")]
+	public partial class Produto : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Descricao;
+		
+		private decimal _Preco;
+		
+		private string _Foto;
+		
+		private string _NomeDescricao;
+		
+		private int _Cardapio_id;
+		
+		private System.Nullable<int> _Fila_id;
+		
+		private EntitySet<ItemPedido> _ItemPedidos;
+		
+		private EntityRef<Cardapio> _Cardapio;
+		
+		private EntityRef<Fila> _Fila;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnDescricaoChanging(string value);
+    partial void OnDescricaoChanged();
+    partial void OnPrecoChanging(decimal value);
+    partial void OnPrecoChanged();
+    partial void OnFotoChanging(string value);
+    partial void OnFotoChanged();
+    partial void OnNomeDescricaoChanging(string value);
+    partial void OnNomeDescricaoChanged();
+    partial void OnCardapio_idChanging(int value);
+    partial void OnCardapio_idChanged();
+    partial void OnFila_idChanging(System.Nullable<int> value);
+    partial void OnFila_idChanged();
+    #endregion
+		
+		public Produto()
+		{
+			this._ItemPedidos = new EntitySet<ItemPedido>(new Action<ItemPedido>(this.attach_ItemPedidos), new Action<ItemPedido>(this.detach_ItemPedidos));
+			this._Cardapio = default(EntityRef<Cardapio>);
+			this._Fila = default(EntityRef<Fila>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descricao", DbType="VarChar(200)")]
+		public string Descricao
+		{
+			get
+			{
+				return this._Descricao;
+			}
+			set
+			{
+				if ((this._Descricao != value))
+				{
+					this.OnDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._Descricao = value;
+					this.SendPropertyChanged("Descricao");
+					this.OnDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Preco", DbType="Decimal(8,2) NOT NULL")]
+		public decimal Preco
+		{
+			get
+			{
+				return this._Preco;
+			}
+			set
+			{
+				if ((this._Preco != value))
+				{
+					this.OnPrecoChanging(value);
+					this.SendPropertyChanging();
+					this._Preco = value;
+					this.SendPropertyChanged("Preco");
+					this.OnPrecoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Foto", DbType="VarChar(MAX)")]
+		public string Foto
+		{
+			get
+			{
+				return this._Foto;
+			}
+			set
+			{
+				if ((this._Foto != value))
+				{
+					this.OnFotoChanging(value);
+					this.SendPropertyChanging();
+					this._Foto = value;
+					this.SendPropertyChanged("Foto");
+					this.OnFotoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NomeDescricao", DbType="VarChar(50)")]
+		public string NomeDescricao
+		{
+			get
+			{
+				return this._NomeDescricao;
+			}
+			set
+			{
+				if ((this._NomeDescricao != value))
+				{
+					this.OnNomeDescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._NomeDescricao = value;
+					this.SendPropertyChanged("NomeDescricao");
+					this.OnNomeDescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cardapio_id", DbType="Int NOT NULL")]
+		public int Cardapio_id
+		{
+			get
+			{
+				return this._Cardapio_id;
+			}
+			set
+			{
+				if ((this._Cardapio_id != value))
+				{
+					if (this._Cardapio.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCardapio_idChanging(value);
+					this.SendPropertyChanging();
+					this._Cardapio_id = value;
+					this.SendPropertyChanged("Cardapio_id");
+					this.OnCardapio_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fila_id", DbType="Int")]
+		public System.Nullable<int> Fila_id
+		{
+			get
+			{
+				return this._Fila_id;
+			}
+			set
+			{
+				if ((this._Fila_id != value))
+				{
+					if (this._Fila.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnFila_idChanging(value);
+					this.SendPropertyChanging();
+					this._Fila_id = value;
+					this.SendPropertyChanged("Fila_id");
+					this.OnFila_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_ItemPedido", Storage="_ItemPedidos", ThisKey="Id", OtherKey="Produto_Id")]
+		internal EntitySet<ItemPedido> ItemPedidos
+		{
+			get
+			{
+				return this._ItemPedidos;
+			}
+			set
+			{
+				this._ItemPedidos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cardapio_Produto", Storage="_Cardapio", ThisKey="Cardapio_id", OtherKey="Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		internal Cardapio Cardapio
+		{
+			get
+			{
+				return this._Cardapio.Entity;
+			}
+			set
+			{
+				Cardapio previousValue = this._Cardapio.Entity;
+				if (((previousValue != value) 
+							|| (this._Cardapio.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Cardapio.Entity = null;
+						previousValue.Produtos.Remove(this);
+					}
+					this._Cardapio.Entity = value;
+					if ((value != null))
+					{
+						value.Produtos.Add(this);
+						this._Cardapio_id = value.Id;
+					}
+					else
+					{
+						this._Cardapio_id = default(int);
+					}
+					this.SendPropertyChanged("Cardapio");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Fila_Produto", Storage="_Fila", ThisKey="Fila_id", OtherKey="Id", IsForeignKey=true)]
+		internal Fila Fila
+		{
+			get
+			{
+				return this._Fila.Entity;
+			}
+			set
+			{
+				Fila previousValue = this._Fila.Entity;
+				if (((previousValue != value) 
+							|| (this._Fila.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Fila.Entity = null;
+						previousValue.Produtos.Remove(this);
+					}
+					this._Fila.Entity = value;
+					if ((value != null))
+					{
+						value.Produtos.Add(this);
+						this._Fila_id = value.Id;
+					}
+					else
+					{
+						this._Fila_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Fila");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ItemPedidos(ItemPedido entity)
+		{
+			this.SendPropertyChanging();
+			entity.Produto = this;
+		}
+		
+		private void detach_ItemPedidos(ItemPedido entity)
+		{
+			this.SendPropertyChanging();
+			entity.Produto = null;
 		}
 	}
 }
