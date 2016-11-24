@@ -21,7 +21,7 @@ namespace CRUDRestaurante.Controllers
         public void Post([FromBody]Models.Produto produto)
         {
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.Produtos.InsertOnSubmit(new Models.Produto() { Descricao = produto.Descricao, Preco = produto.Preco, Foto = produto.Foto, NomeDescricao = produto.NomeDescricao, Cardapio_id = produto.Cardapio_id, Fila_id = produto.Fila_id});
+            dc.Produtos.InsertOnSubmit(new Models.Produto() { Descricao = produto.Descricao, Preco = produto.Preco, Foto = produto.Foto, NomeDescricao = produto.NomeDescricao, Cardapio_id = produto.Cardapio_id, Fila_id = produto.Fila_id, ArquivoFoto = produto.ArquivoFoto});
             dc.SubmitChanges();
         }
 
