@@ -83,13 +83,14 @@
     <Type Name="Produto">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Descricao" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Preco" Type="System.Decimal" DbType="Decimal(8,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Preco" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
       <Column Name="Foto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="NomeDescricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Cardapio_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cardapio_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Fila_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArquivoFoto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Association Name="Produto_ItemPedido" Member="ItemPedidos" AccessModifier="Internal" ThisKey="Id" OtherKey="Produto_Id" Type="ItemPedido" />
-      <Association Name="Cardapio_Produto" Member="Cardapio" AccessModifier="Internal" ThisKey="Cardapio_id" OtherKey="Id" Type="Cardapio" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Cardapio_Produto" Member="Cardapio" AccessModifier="Internal" ThisKey="Cardapio_id" OtherKey="Id" Type="Cardapio" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="Fila_Produto" Member="Fila" AccessModifier="Internal" ThisKey="Fila_id" OtherKey="Id" Type="Fila" IsForeignKey="true" />
     </Type>
   </Table>

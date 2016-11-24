@@ -1755,15 +1755,17 @@ namespace CRUDRestaurante.Models
 		
 		private string _Descricao;
 		
-		private decimal _Preco;
+		private System.Nullable<decimal> _Preco;
 		
 		private string _Foto;
 		
 		private string _NomeDescricao;
 		
-		private int _Cardapio_id;
+		private System.Nullable<int> _Cardapio_id;
 		
 		private System.Nullable<int> _Fila_id;
+		
+		private string _ArquivoFoto;
 		
 		private EntitySet<ItemPedido> _ItemPedidos;
 		
@@ -1779,16 +1781,18 @@ namespace CRUDRestaurante.Models
     partial void OnIdChanged();
     partial void OnDescricaoChanging(string value);
     partial void OnDescricaoChanged();
-    partial void OnPrecoChanging(decimal value);
+    partial void OnPrecoChanging(System.Nullable<decimal> value);
     partial void OnPrecoChanged();
     partial void OnFotoChanging(string value);
     partial void OnFotoChanged();
     partial void OnNomeDescricaoChanging(string value);
     partial void OnNomeDescricaoChanged();
-    partial void OnCardapio_idChanging(int value);
+    partial void OnCardapio_idChanging(System.Nullable<int> value);
     partial void OnCardapio_idChanged();
     partial void OnFila_idChanging(System.Nullable<int> value);
     partial void OnFila_idChanged();
+    partial void OnArquivoFotoChanging(string value);
+    partial void OnArquivoFotoChanged();
     #endregion
 		
 		public Produto()
@@ -1839,8 +1843,8 @@ namespace CRUDRestaurante.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Preco", DbType="Decimal(8,2) NOT NULL")]
-		public decimal Preco
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Preco", DbType="Decimal(8,2)")]
+		public System.Nullable<decimal> Preco
 		{
 			get
 			{
@@ -1899,8 +1903,8 @@ namespace CRUDRestaurante.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cardapio_id", DbType="Int NOT NULL")]
-		public int Cardapio_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cardapio_id", DbType="Int")]
+		public System.Nullable<int> Cardapio_id
 		{
 			get
 			{
@@ -1947,6 +1951,26 @@ namespace CRUDRestaurante.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArquivoFoto", DbType="VarChar(MAX)")]
+		public string ArquivoFoto
+		{
+			get
+			{
+				return this._ArquivoFoto;
+			}
+			set
+			{
+				if ((this._ArquivoFoto != value))
+				{
+					this.OnArquivoFotoChanging(value);
+					this.SendPropertyChanging();
+					this._ArquivoFoto = value;
+					this.SendPropertyChanged("ArquivoFoto");
+					this.OnArquivoFotoChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_ItemPedido", Storage="_ItemPedidos", ThisKey="Id", OtherKey="Produto_Id")]
 		internal EntitySet<ItemPedido> ItemPedidos
 		{
@@ -1960,7 +1984,7 @@ namespace CRUDRestaurante.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cardapio_Produto", Storage="_Cardapio", ThisKey="Cardapio_id", OtherKey="Id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cardapio_Produto", Storage="_Cardapio", ThisKey="Cardapio_id", OtherKey="Id", IsForeignKey=true, DeleteRule="CASCADE")]
 		internal Cardapio Cardapio
 		{
 			get
@@ -1987,7 +2011,7 @@ namespace CRUDRestaurante.Models
 					}
 					else
 					{
-						this._Cardapio_id = default(int);
+						this._Cardapio_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Cardapio");
 				}
