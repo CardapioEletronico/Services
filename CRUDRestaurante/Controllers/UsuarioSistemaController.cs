@@ -17,29 +17,27 @@ namespace CRUDRestaurante.Controllers
             return listaUsuariosSistema.ToList();
         }
 
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Models.UsuarioSistema usuarioSistema)
         {
-            List<Models.UsuarioSistema> f = JsonConvert.DeserializeObject<List<Models.UsuarioSistema>>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.UsuarioSistemas.InsertAllOnSubmit(f);
+            dc.UsuarioSistemas.InsertOnSubmit(new Models.UsuarioSistema() { Usuario = usuarioSistema.Usuario, AdminRest = usuarioSistema.AdminRest, Garcom = usuarioSistema.Garcom, GerentePedidos = usuarioSistema.GerentePedidos, Caixa = usuarioSistema.Caixa, Restaurante_Id = usuarioSistema.Restaurante_Id, Senha = usuarioSistema.Senha });
             dc.SubmitChanges();
         }
 
         // PUT api/values/5
         [Route("api/usuariosistema/{usuario}")]
         [HttpPut]
-        public void Put(string usuario, [FromBody]string value)
+        public void Put(string usuario, [FromBody]Models.UsuarioSistema c)
         {
-            Models.UsuarioSistema c = JsonConvert.DeserializeObject<Models.UsuarioSistema>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var usuarioSist = (from f in dc.UsuarioSistemas where f.Usuario == usuario select f).Single();
-            usuarioSist.Usuario = c.Usuario;
-            usuarioSist.Senha = c.Senha;
-            usuarioSist.Restaurante_Id = c.Restaurante_Id;
-            usuarioSist.Garcom = c.Garcom;
-            usuarioSist.AdminRest = c.AdminRest;
-            usuarioSist.Caixa = c.Caixa;
-            usuarioSist.GerentePedidos = c.GerentePedidos;
+            var x = (from f in dc.UsuarioSistemas where f.Usuario == usuario select f).Single();
+            x.Usuario = c.Usuario;
+            x.Senha = c.Senha;
+            x.Restaurante_Id = c.Restaurante_Id;
+            x.Garcom = c.Garcom;
+            x.AdminRest = c.AdminRest;
+            x.Caixa = c.Caixa;
+            x.GerentePedidos = c.GerentePedidos;
             dc.SubmitChanges();
         }
 
