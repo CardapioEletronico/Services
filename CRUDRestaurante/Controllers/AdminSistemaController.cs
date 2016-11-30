@@ -17,24 +17,24 @@ namespace CRUDRestaurante.Controllers
             return listaAdminSistema.ToList();
         }
 
-        public void Post([FromBody]string value)
+        public void Post([FromBody] Models.AdminSistema adminsistema)
         {
-            List<Models.AdminSistema> f = JsonConvert.DeserializeObject<List<Models.AdminSistema>>(value);
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            dc.AdminSistemas.InsertAllOnSubmit(f);
+            dc.AdminSistemas.InsertOnSubmit(new Models.AdminSistema() { Usuario = adminsistema.Usuario, Senha = adminsistema.Senha });
             dc.SubmitChanges();
+
         }
 
         // PUT api/values/5
         [Route("api/adminsistema/{usuario}")]
         [HttpPut]
-        public void Put(string usuario, [FromBody]string value)
+        public void Put(string usuario, [FromBody] Models.AdminSistema adminsistema)
         {
-            Models.AdminSistema c = JsonConvert.DeserializeObject<Models.AdminSistema>(value);
+
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
-            var admSistema = (from f in dc.AdminSistemas where f.Usuario == usuario select f).Single();
-            admSistema.Usuario = c.Usuario;
-            admSistema.Senha = c.Senha;
+            Models.AdminSistema rest = (from f in dc.AdminSistemas where f.Usuario == usuario select f).Single();
+            rest.Usuario = adminsistema.Usuario;
+            rest.Senha = adminsistema.Senha;
             dc.SubmitChanges();
         }
 
