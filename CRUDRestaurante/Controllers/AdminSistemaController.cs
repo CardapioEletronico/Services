@@ -30,7 +30,6 @@ namespace CRUDRestaurante.Controllers
         [HttpPut]
         public void Put(string usuario, [FromBody] Models.AdminSistema adminsistema)
         {
-
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
             Models.AdminSistema rest = (from f in dc.AdminSistemas where f.Usuario == usuario select f).Single();
             rest.Usuario = adminsistema.Usuario;
