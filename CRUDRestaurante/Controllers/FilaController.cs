@@ -31,7 +31,7 @@ namespace CRUDRestaurante.Controllers
             Models.CardapioDataContext dc = new Models.CardapioDataContext();
             Models.Fila fil = (from f in dc.Filas where f.Id == id select f).Single();
             fil.Descricao = fila.Descricao;
-            fila.Cardapio_id = fila.Cardapio_id;
+            fil.Cardapio_id = fila.Cardapio_id;
             dc.SubmitChanges();
         }
 
