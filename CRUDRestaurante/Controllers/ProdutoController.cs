@@ -33,7 +33,7 @@ namespace CRUDRestaurante.Controllers
             x.Descricao = produto.Descricao;
             x.Preco = produto.Preco;
             x.Foto = produto.Foto;
-            x.NomeDescricao = produto.Descricao;
+            x.NomeDescricao = produto.NomeDescricao;
             x.Cardapio_id = produto.Cardapio_id;
             x.Fila_id = produto.Fila_id;
             x.ArquivoFoto = produto.ArquivoFoto;
