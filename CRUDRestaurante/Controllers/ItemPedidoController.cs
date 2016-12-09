@@ -29,7 +29,6 @@ namespace CRUDRestaurante.Controllers
             Models.ItemPedido itPed = (from f in dc.ItemPedidos where f.Id == id select f).Single();
             itPed.Quantidade = itempedido.Quantidade;
             itPed.Situacao = itempedido.Situacao;
-            //itPed.Hora = itempedido.Hora;
             itPed.Pedido_Id = itempedido.Pedido_Id;
             itPed.Produto_Id = itempedido.Produto_Id;
             dc.SubmitChanges();

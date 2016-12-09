@@ -39,9 +39,6 @@ namespace CRUDRestaurante.Models
     partial void InsertPedido(Pedido instance);
     partial void UpdatePedido(Pedido instance);
     partial void DeletePedido(Pedido instance);
-    partial void InsertItemPedido(ItemPedido instance);
-    partial void UpdateItemPedido(ItemPedido instance);
-    partial void DeleteItemPedido(ItemPedido instance);
     partial void InsertFila(Fila instance);
     partial void UpdateFila(Fila instance);
     partial void DeleteFila(Fila instance);
@@ -57,6 +54,9 @@ namespace CRUDRestaurante.Models
     partial void InsertProduto(Produto instance);
     partial void UpdateProduto(Produto instance);
     partial void DeleteProduto(Produto instance);
+    partial void InsertItemPedido(ItemPedido instance);
+    partial void UpdateItemPedido(ItemPedido instance);
+    partial void DeleteItemPedido(ItemPedido instance);
     #endregion
 		
 		public CardapioDataContext() : 
@@ -113,14 +113,6 @@ namespace CRUDRestaurante.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<ItemPedido> ItemPedidos
-		{
-			get
-			{
-				return this.GetTable<ItemPedido>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Fila> Filas
 		{
 			get
@@ -158,6 +150,14 @@ namespace CRUDRestaurante.Models
 			get
 			{
 				return this.GetTable<Produto>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ItemPedido> ItemPedidos
+		{
+			get
+			{
+				return this.GetTable<ItemPedido>();
 			}
 		}
 	}
@@ -759,270 +759,6 @@ namespace CRUDRestaurante.Models
 		{
 			this.SendPropertyChanging();
 			entity.Pedido = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ItemPedido")]
-	public partial class ItemPedido : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _Quantidade;
-		
-		private System.Nullable<System.TimeSpan> _Hora;
-		
-		private int _Situacao;
-		
-		private int _Produto_Id;
-		
-		private System.Nullable<int> _Pedido_Id;
-		
-		private EntityRef<Pedido> _Pedido;
-		
-		private EntityRef<Produto> _Produto;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnQuantidadeChanging(int value);
-    partial void OnQuantidadeChanged();
-    partial void OnHoraChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnHoraChanged();
-    partial void OnSituacaoChanging(int value);
-    partial void OnSituacaoChanged();
-    partial void OnProduto_IdChanging(int value);
-    partial void OnProduto_IdChanged();
-    partial void OnPedido_IdChanging(System.Nullable<int> value);
-    partial void OnPedido_IdChanged();
-    #endregion
-		
-		public ItemPedido()
-		{
-			this._Pedido = default(EntityRef<Pedido>);
-			this._Produto = default(EntityRef<Produto>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantidade", DbType="Int NOT NULL")]
-		public int Quantidade
-		{
-			get
-			{
-				return this._Quantidade;
-			}
-			set
-			{
-				if ((this._Quantidade != value))
-				{
-					this.OnQuantidadeChanging(value);
-					this.SendPropertyChanging();
-					this._Quantidade = value;
-					this.SendPropertyChanged("Quantidade");
-					this.OnQuantidadeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="Time")]
-		public System.Nullable<System.TimeSpan> Hora
-		{
-			get
-			{
-				return this._Hora;
-			}
-			set
-			{
-				if ((this._Hora != value))
-				{
-					this.OnHoraChanging(value);
-					this.SendPropertyChanging();
-					this._Hora = value;
-					this.SendPropertyChanged("Hora");
-					this.OnHoraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Situacao", DbType="Int NOT NULL")]
-		public int Situacao
-		{
-			get
-			{
-				return this._Situacao;
-			}
-			set
-			{
-				if ((this._Situacao != value))
-				{
-					this.OnSituacaoChanging(value);
-					this.SendPropertyChanging();
-					this._Situacao = value;
-					this.SendPropertyChanged("Situacao");
-					this.OnSituacaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Produto_Id", DbType="Int NOT NULL")]
-		public int Produto_Id
-		{
-			get
-			{
-				return this._Produto_Id;
-			}
-			set
-			{
-				if ((this._Produto_Id != value))
-				{
-					if (this._Produto.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProduto_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Produto_Id = value;
-					this.SendPropertyChanged("Produto_Id");
-					this.OnProduto_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pedido_Id", DbType="Int")]
-		public System.Nullable<int> Pedido_Id
-		{
-			get
-			{
-				return this._Pedido_Id;
-			}
-			set
-			{
-				if ((this._Pedido_Id != value))
-				{
-					if (this._Pedido.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPedido_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Pedido_Id = value;
-					this.SendPropertyChanged("Pedido_Id");
-					this.OnPedido_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pedido_ItemPedido", Storage="_Pedido", ThisKey="Pedido_Id", OtherKey="Id", IsForeignKey=true)]
-		internal Pedido Pedido
-		{
-			get
-			{
-				return this._Pedido.Entity;
-			}
-			set
-			{
-				Pedido previousValue = this._Pedido.Entity;
-				if (((previousValue != value) 
-							|| (this._Pedido.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Pedido.Entity = null;
-						previousValue.ItemPedidos.Remove(this);
-					}
-					this._Pedido.Entity = value;
-					if ((value != null))
-					{
-						value.ItemPedidos.Add(this);
-						this._Pedido_Id = value.Id;
-					}
-					else
-					{
-						this._Pedido_Id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Pedido");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_ItemPedido", Storage="_Produto", ThisKey="Produto_Id", OtherKey="Id", IsForeignKey=true)]
-		internal Produto Produto
-		{
-			get
-			{
-				return this._Produto.Entity;
-			}
-			set
-			{
-				Produto previousValue = this._Produto.Entity;
-				if (((previousValue != value) 
-							|| (this._Produto.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Produto.Entity = null;
-						previousValue.ItemPedidos.Remove(this);
-					}
-					this._Produto.Entity = value;
-					if ((value != null))
-					{
-						value.ItemPedidos.Add(this);
-						this._Produto_Id = value.Id;
-					}
-					else
-					{
-						this._Produto_Id = default(int);
-					}
-					this.SendPropertyChanged("Produto");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -2082,6 +1818,270 @@ namespace CRUDRestaurante.Models
 		{
 			this.SendPropertyChanging();
 			entity.Produto = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ItemPedido")]
+	public partial class ItemPedido : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _Quantidade;
+		
+		private System.Nullable<System.DateTime> _Hora;
+		
+		private int _Situacao;
+		
+		private int _Produto_Id;
+		
+		private System.Nullable<int> _Pedido_Id;
+		
+		private EntityRef<Pedido> _Pedido;
+		
+		private EntityRef<Produto> _Produto;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnQuantidadeChanging(int value);
+    partial void OnQuantidadeChanged();
+    partial void OnHoraChanging(System.Nullable<System.DateTime> value);
+    partial void OnHoraChanged();
+    partial void OnSituacaoChanging(int value);
+    partial void OnSituacaoChanged();
+    partial void OnProduto_IdChanging(int value);
+    partial void OnProduto_IdChanged();
+    partial void OnPedido_IdChanging(System.Nullable<int> value);
+    partial void OnPedido_IdChanged();
+    #endregion
+		
+		public ItemPedido()
+		{
+			this._Pedido = default(EntityRef<Pedido>);
+			this._Produto = default(EntityRef<Produto>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantidade", DbType="Int NOT NULL")]
+		public int Quantidade
+		{
+			get
+			{
+				return this._Quantidade;
+			}
+			set
+			{
+				if ((this._Quantidade != value))
+				{
+					this.OnQuantidadeChanging(value);
+					this.SendPropertyChanging();
+					this._Quantidade = value;
+					this.SendPropertyChanged("Quantidade");
+					this.OnQuantidadeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Hora
+		{
+			get
+			{
+				return this._Hora;
+			}
+			set
+			{
+				if ((this._Hora != value))
+				{
+					this.OnHoraChanging(value);
+					this.SendPropertyChanging();
+					this._Hora = value;
+					this.SendPropertyChanged("Hora");
+					this.OnHoraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Situacao", DbType="Int NOT NULL")]
+		public int Situacao
+		{
+			get
+			{
+				return this._Situacao;
+			}
+			set
+			{
+				if ((this._Situacao != value))
+				{
+					this.OnSituacaoChanging(value);
+					this.SendPropertyChanging();
+					this._Situacao = value;
+					this.SendPropertyChanged("Situacao");
+					this.OnSituacaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Produto_Id", DbType="Int NOT NULL")]
+		public int Produto_Id
+		{
+			get
+			{
+				return this._Produto_Id;
+			}
+			set
+			{
+				if ((this._Produto_Id != value))
+				{
+					if (this._Produto.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProduto_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Produto_Id = value;
+					this.SendPropertyChanged("Produto_Id");
+					this.OnProduto_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pedido_Id", DbType="Int")]
+		public System.Nullable<int> Pedido_Id
+		{
+			get
+			{
+				return this._Pedido_Id;
+			}
+			set
+			{
+				if ((this._Pedido_Id != value))
+				{
+					if (this._Pedido.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPedido_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Pedido_Id = value;
+					this.SendPropertyChanged("Pedido_Id");
+					this.OnPedido_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pedido_ItemPedido", Storage="_Pedido", ThisKey="Pedido_Id", OtherKey="Id", IsForeignKey=true)]
+		internal Pedido Pedido
+		{
+			get
+			{
+				return this._Pedido.Entity;
+			}
+			set
+			{
+				Pedido previousValue = this._Pedido.Entity;
+				if (((previousValue != value) 
+							|| (this._Pedido.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Pedido.Entity = null;
+						previousValue.ItemPedidos.Remove(this);
+					}
+					this._Pedido.Entity = value;
+					if ((value != null))
+					{
+						value.ItemPedidos.Add(this);
+						this._Pedido_Id = value.Id;
+					}
+					else
+					{
+						this._Pedido_Id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Pedido");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Produto_ItemPedido", Storage="_Produto", ThisKey="Produto_Id", OtherKey="Id", IsForeignKey=true)]
+		internal Produto Produto
+		{
+			get
+			{
+				return this._Produto.Entity;
+			}
+			set
+			{
+				Produto previousValue = this._Produto.Entity;
+				if (((previousValue != value) 
+							|| (this._Produto.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Produto.Entity = null;
+						previousValue.ItemPedidos.Remove(this);
+					}
+					this._Produto.Entity = value;
+					if ((value != null))
+					{
+						value.ItemPedidos.Add(this);
+						this._Produto_Id = value.Id;
+					}
+					else
+					{
+						this._Produto_Id = default(int);
+					}
+					this.SendPropertyChanged("Produto");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

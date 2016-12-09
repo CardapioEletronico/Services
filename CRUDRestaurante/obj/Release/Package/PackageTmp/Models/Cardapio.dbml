@@ -30,18 +30,6 @@
       <Association Name="Mesa_Pedido" Member="Mesa" AccessModifier="Internal" ThisKey="Mesa_Id" OtherKey="Id" Type="Mesa" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ItemPedido" Member="ItemPedidos">
-    <Type Name="ItemPedido">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Hora" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="Situacao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Produto_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Pedido_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Pedido_ItemPedido" Member="Pedido" AccessModifier="Internal" ThisKey="Pedido_Id" OtherKey="Id" Type="Pedido" IsForeignKey="true" />
-      <Association Name="Produto_ItemPedido" Member="Produto" AccessModifier="Internal" ThisKey="Produto_Id" OtherKey="Id" Type="Produto" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Fila" Member="Filas">
     <Type Name="Fila">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -92,6 +80,18 @@
       <Association Name="Produto_ItemPedido" Member="ItemPedidos" AccessModifier="Internal" ThisKey="Id" OtherKey="Produto_Id" Type="ItemPedido" />
       <Association Name="Cardapio_Produto" Member="Cardapio" AccessModifier="Internal" ThisKey="Cardapio_id" OtherKey="Id" Type="Cardapio" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="Fila_Produto" Member="Fila" AccessModifier="Internal" ThisKey="Fila_id" OtherKey="Id" Type="Fila" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ItemPedido" Member="ItemPedidos">
+    <Type Name="ItemPedido">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Situacao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Produto_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pedido_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Pedido_ItemPedido" Member="Pedido" AccessModifier="Internal" ThisKey="Pedido_Id" OtherKey="Id" Type="Pedido" IsForeignKey="true" />
+      <Association Name="Produto_ItemPedido" Member="Produto" AccessModifier="Internal" ThisKey="Produto_Id" OtherKey="Id" Type="Produto" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
